@@ -34,7 +34,7 @@ impl Http {
             self.base.query_pairs_mut().append_pair("auth", key);
         }
         println!("{}", url.to_string());
-        let body = reqwest::get(url.to_string()).await?;
+        let body = reqwest::get(url.as_str()).await?;
 
         let status = body.status();
 
