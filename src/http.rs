@@ -33,6 +33,7 @@ impl Http {
         if let Some(key) = &self.apikey {
             self.base.query_pairs_mut().append_pair("auth", key);
         }
+        println!("{}", url.to_string());
         let body = reqwest::get(url.to_string()).await?;
 
         let status = body.status();
