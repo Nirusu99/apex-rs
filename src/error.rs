@@ -1,7 +1,7 @@
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-enum ApexError {
+pub enum ApexError {
     #[error("Try again in a few minutes.")]
     APITimeout,
     #[error("Unauthorized / Unknown API key.")]

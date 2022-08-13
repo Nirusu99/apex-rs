@@ -13,7 +13,7 @@ const ARENA_RANKED: &'static str = "arenasRanked";
 const EVENT: &'static str = "ltm";
 
 #[derive(Serialize, Deserialize, Debug)]
-struct Map {
+pub struct Map {
     #[serde(rename = "map")]
     name: String,
     start: i64,
@@ -47,7 +47,7 @@ impl Map {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct MapRotation {
+pub struct MapRotation {
     maps: HashMap<String, Map>,
 }
 
@@ -61,7 +61,7 @@ impl MapRotation {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct MapRotations {
+pub struct MapRotations {
     rotations: HashMap<String, MapRotation>,
 }
 
