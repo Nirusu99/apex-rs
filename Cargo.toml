@@ -1,0 +1,13 @@
+[package]
+name = "apex-rs"
+version = "0.1.0"
+authors = ["Nils Pukropp <nils@nirusu.codes>"]
+edition = "2021"
+license-file ="LICENSE.md"
+description = "A simple wrapper for the official apex api"
+homepage = "https://github.com/Nirusu99/apex-rs"
+repository = "https://github.com/Nirusu99/apex-rs"
+readme = "README.md"
+
+[dependencies]
+thiserror = "^1"
