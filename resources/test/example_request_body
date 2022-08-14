@@ -1,0 +1,138 @@
+{
+    "battle_royale": {
+        "current": {
+            "start": 1660410000,
+            "end": 1660415400,
+            "readableDate_start": "2022-08-13 17:00:00",
+            "readableDate_end": "2022-08-13 18:30:00",
+            "map": "Storm Point",
+            "code": "storm_point_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Storm_Point.png",
+            "remainingSecs": 1678,
+            "remainingMins": 28,
+            "remainingTimer": "00:27:58"
+        },
+        "next": {
+            "start": 1660415400,
+            "end": 1660420800,
+            "readableDate_start": "2022-08-13 18:30:00",
+            "readableDate_end": "2022-08-13 20:00:00",
+            "map": "World's Edge",
+            "code": "worlds_edge_rotation",
+            "DurationInSecs": 5400,
+            "DurationInMinutes": 90,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Worlds_Edge.png"
+        }
+    },
+    "arenas": {
+        "current": {
+            "start": 1660413600,
+            "end": 1660414500,
+            "readableDate_start": "2022-08-13 18:00:00",
+            "readableDate_end": "2022-08-13 18:15:00",
+            "map": "Party crasher",
+            "code": "arenas_party_crasher",
+            "DurationInSecs": 900,
+            "DurationInMinutes": 15,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Arena_Party_Crasher.png",
+            "remainingSecs": 778,
+            "remainingMins": 13,
+            "remainingTimer": "00:12:58"
+        },
+        "next": {
+            "start": 1660414500,
+            "end": 1660415400,
+            "readableDate_start": "2022-08-13 18:15:00",
+            "readableDate_end": "2022-08-13 18:30:00",
+            "map": "Phase runner",
+            "code": "arenas_phase_runner",
+            "DurationInSecs": 900,
+            "DurationInMinutes": 15,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Arena_Phase_Runner.png"
+        }
+    },
+    "ranked": {
+        "current": {
+            "start": 1660064400,
+            "end": 1664298000,
+            "readableDate_start": "2022-08-09 17:00:00",
+            "readableDate_end": "2022-09-27 17:00:00",
+            "map": "Kings Canyon",
+            "code": "kings_canyon_rotation",
+            "DurationInSecs": 4233600,
+            "DurationInMinutes": 70560,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Kings_Canyon.png",
+            "remainingSecs": 3884278,
+            "remainingMins": 64738,
+            "remainingTimer": "1078:57:58"
+        },
+        "next": {
+            "start": 1664298000,
+            "end": 1667930400,
+            "readableDate_start": "2022-09-27 17:00:00",
+            "readableDate_end": "2022-11-08 18:00:00",
+            "map": "Storm Point",
+            "code": "storm_point_rotation",
+            "DurationInSecs": 3632400,
+            "DurationInMinutes": 60540,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Storm_Point.png"
+        }
+    },
+    "arenasRanked": {
+        "current": {
+            "start": 1660412400,
+            "end": 1660414800,
+            "readableDate_start": "2022-08-13 17:40:00",
+            "readableDate_end": "2022-08-13 18:20:00",
+            "map": "Drop Off",
+            "code": "arenas_composite",
+            "DurationInSecs": 2400,
+            "DurationInMinutes": 40,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Arenas_Dropoff.png",
+            "remainingSecs": 1078,
+            "remainingMins": 18,
+            "remainingTimer": "00:17:58"
+        },
+        "next": {
+            "start": 1660414800,
+            "end": 1660417200,
+            "readableDate_start": "2022-08-13 18:20:00",
+            "readableDate_end": "2022-08-13 19:00:00",
+            "map": "Habitat",
+            "code": "arenas_habitat",
+            "DurationInSecs": 2400,
+            "DurationInMinutes": 40,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Arena_Habitat.png"
+        }
+    },
+    "ltm": {
+        "current": {
+            "start": 1660413600,
+            "end": 1660417200,
+            "readableDate_start": "2022-08-13 18:00:00",
+            "readableDate_end": "2022-08-13 19:00:00",
+            "map": "Storm Point",
+            "code": "storm_point_rotation",
+            "DurationInSecs": 3600,
+            "DurationInMinutes": 60,
+            "eventName": "Armed and Dangerous",
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Storm_Point.png",
+            "remainingSecs": 3478,
+            "remainingMins": 58,
+            "remainingTimer": "00:57:58"
+        },
+        "next": {
+            "start": 1660417200,
+            "end": 1660420800,
+            "readableDate_start": "2022-08-13 19:00:00",
+            "readableDate_end": "2022-08-13 20:00:00",
+            "map": "Olympus",
+            "code": "olympus_rotation",
+            "DurationInSecs": 3600,
+            "DurationInMinutes": 60,
+            "asset": "https:\/\/apexlegendsstatus.com\/assets\/maps\/Olympus.png"
+        }
+    }
+}

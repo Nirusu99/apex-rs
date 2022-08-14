@@ -48,7 +48,7 @@ impl Map {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MapRotation {
-    #[serde(rename = "$value")]
+    #[serde(flatten)]
     maps: HashMap<String, Map>,
 }
 
@@ -63,7 +63,7 @@ impl MapRotation {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MapRotations {
-    #[serde(rename = "$value")]
+    #[serde(flatten)]
     rotations: HashMap<String, MapRotation>,
 }
 
@@ -82,5 +82,21 @@ impl MapRotations {
     }
     pub fn event<'a>(&'a self) -> Option<&'a MapRotation> {
         self.rotations.get(EVENT)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::path::PathBuf;
+
+    use super::MapRotations;
+
+    #[test]
+    fn parse_example() -> Result<(), Box<dyn std::error::Error>> {
+        let mut root = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        root.push("resources/test/example_request_body");
+        let body = std::fs::read_to_string(&format!("{}", root.display()))?;
+        let _: MapRotations = serde_json::from_str(&body)?;
+        Ok(())
     }
 }
