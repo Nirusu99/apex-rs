@@ -48,6 +48,7 @@ impl Map {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MapRotation {
+    #[serde(rename = "$value")]
     maps: HashMap<String, Map>,
 }
 
@@ -62,6 +63,7 @@ impl MapRotation {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct MapRotations {
+    #[serde(rename = "$value")]
     rotations: HashMap<String, MapRotation>,
 }
 
