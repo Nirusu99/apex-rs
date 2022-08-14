@@ -21,19 +21,14 @@ impl Http {
         http
     }
 
-    pub async fn request(
-        mut self,
-        path: &str,
-        query: &[(&str, &str)],
-    ) -> Result<String, ApexError> {
-        let url = self.base.join(path)?;
-        query.iter().for_each(|(k, v)| {
-            self.base.query_pairs_mut().append_pair(k, v);
-        });
+    pub async fn request(&self, path: &str, query: &[(&str, &str)]) -> Result<String, ApexError> {
+        let mut url = self.base.join(path)?;
         if let Some(key) = &self.apikey {
-            self.base.query_pairs_mut().append_pair("auth", key);
+            url.query_pairs_mut().append_pair("auth", key);
         }
-        println!("{}", url.to_string());
+        query.iter().for_each(|(k, v)| {
+            url.query_pairs_mut().append_pair(k, v);
+        });
         let body = reqwest::get(url.as_str()).await?;
 
         let status = body.status();
