@@ -1,2 +1,2 @@
 # apex-rs
-simple apex api wrapper in rust
+simple [apex api](https://apexlegendsapi.com/) wrapper in rust
