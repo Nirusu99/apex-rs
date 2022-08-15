@@ -190,6 +190,9 @@ impl Bundles {
 }
 
 impl<'a> Bundle {
+    pub fn bundle(&self) -> &str {
+        &self.bundle
+    }
     pub fn start(&self) -> i64 {
         self.start
     }
