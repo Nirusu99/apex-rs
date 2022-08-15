@@ -6,7 +6,7 @@ use url::Url;
 
 const CURRENT: &'static str = "current";
 const NEXT: &'static str = "next";
-const BATTLE_ROYAL: &'static str = "battle_royal";
+const BATTLE_ROYAL: &'static str = "battle_royale";
 const BATTLE_ROYAL_RANKED: &'static str = "ranked";
 const ARENA: &'static str = "arenas";
 const ARENA_RANKED: &'static str = "arenasRanked";
