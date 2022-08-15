@@ -18,6 +18,14 @@ impl<'a> ApexClient<'a> {
         ApexClient { token }
     }
 
+    pub async fn get_pub_map_rotation(
+        &self,
+    ) -> Result<crate::model::MapRotation, crate::error::ApexError> {
+        let http = Http::new_with_auth(self.token);
+        let body = http.request(MAP_ROTATIONS_LOCATION, &[]).await?;
+        Ok(serde_json::from_str(&body)?)
+    }
+
     pub async fn get_map_rotations(
         &self,
     ) -> Result<crate::model::MapRotations, crate::error::ApexError> {
