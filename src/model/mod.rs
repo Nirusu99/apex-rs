@@ -25,14 +25,17 @@ where
     Ok(T::deserialize(v).unwrap_or_default())
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Map {
     #[serde(rename = "map")]
     name: String,
     start: i64,
     end: i64,
     code: String,
-    asset: String,
+    // WHY?! when you get the rotation with `version=1` the next map doesn't have
+    // an asset, when you do it with `version=2` it does?????????
+    // thx api creators
+    asset: Option<String>,
 }
 
 impl Map {
@@ -51,15 +54,18 @@ impl Map {
     pub fn end_as_date(&self) -> DateTime<Utc> {
         convert_stamp_to_utc(self.end)
     }
-    pub fn asset(&self) -> String {
+    pub fn asset(&self) -> Option<String> {
         self.asset.clone()
     }
-    pub fn asset_as_url(&self) -> Result<Url, Box<dyn std::error::Error + Send + Sync>> {
-        Ok(Url::parse(&self.asset)?)
+    pub fn asset_as_url(&self) -> Result<Option<Url>, Box<dyn std::error::Error + Send + Sync>> {
+        match &self.asset {
+            Some(url) => Ok(Some(Url::parse(url)?)),
+            None => Ok(None),
+        }
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct MapRotation {
     #[serde(flatten)]
     maps: HashMap<String, Map>,
@@ -74,7 +80,7 @@ impl MapRotation {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(transparent)]
 pub struct MapRotations {
     rotations: HashMap<String, MapRotation>,
@@ -98,7 +104,7 @@ impl MapRotations {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Eq, Clone)]
 pub enum BundleType {
     #[serde(rename = "daily")]
     Daily,
@@ -115,7 +121,7 @@ impl Default for BundleType {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct Bundle {
     bundle: String,
     #[serde(default)]
@@ -128,7 +134,7 @@ pub struct Bundle {
     items: Vec<BundleItem>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct BundleItem {
     #[serde(rename = "item")]
     name: String,
@@ -137,7 +143,7 @@ pub struct BundleItem {
     item_type: ItemType,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct ItemType {
     name: String,
     #[serde(default, deserialize_with = "ok_or_default")]
@@ -147,7 +153,7 @@ pub struct ItemType {
     color: String,
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub enum Rarity {
     Unknown,
     Common,
@@ -162,7 +168,7 @@ impl Default for Rarity {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(transparent)]
 pub struct Bundles {
     bundles: Vec<Bundle>,

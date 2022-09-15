@@ -16,6 +16,8 @@ pub enum ApexError {
     RequestError(#[from] reqwest::Error),
     #[error("Couldn't parse response from the apex api.")]
     ResponseParseError(#[from] serde_json::Error),
+    #[error("Currently unavailable")]
+    Unavailable,
 }
 
 unsafe impl Send for ApexError {}
